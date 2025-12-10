@@ -14,6 +14,8 @@ public class FindFirstNonRepeatingChar {
 
 	public static void main(String args[]) {
 		String str = "aabbc ";
+		//String str = "aabbc ";
+		
 
 		String arr[] = str.split("");
 
