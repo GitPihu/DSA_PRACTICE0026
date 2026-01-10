@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 public class GroupAnagram {
-	// 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
 
 	public List<List<String>> groupAnagrams(String[] strs) {
 
