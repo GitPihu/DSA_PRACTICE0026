@@ -2,9 +2,12 @@ package com.neet.code.io;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class GroupAnagram {
+	// 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
 
 	public List<List<String>> groupAnagrams(String[] strs) {
 
@@ -49,10 +52,35 @@ public class GroupAnagram {
 
 	}
 
+	public List<List<String>> groupAnagramsUsingHashmap(String[] strs) {
+
+		// using hasMap
+
+		Map<String, List<String>> map = new HashMap<String, List<String>>();
+
+		for (String s : strs) {
+
+			char chr[] = s.toCharArray();
+
+			Arrays.sort(chr);
+
+			String data = new String(chr);
+
+			map.putIfAbsent(data, new ArrayList<String>());
+
+			map.get(data).add(s);
+
+		}
+
+		return new ArrayList<List<String>>(map.values());
+
+	}
+
 	public static void main(String args[]) {
 
 		GroupAnagram obj = new GroupAnagram();
-		List<List<String>> res = obj.groupAnagrams(new String[0]);
+		List<List<String>> res = obj
+				.groupAnagramsUsingHashmap(new String[] { "act", "pots", "tops", "cat", "stop", "hat" });
 
 		System.out.print(res);
 
